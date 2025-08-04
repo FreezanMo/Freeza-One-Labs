@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freeza One Labs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9E2h6w8h5V4G2lXv7gW0y5B62T3P0zJg4L5e2gK3T5A2H2D2yH4L5/5l5e5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617; /* Deep blue-black */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A0E70; /* Vibrant purple */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6A1A9A;
+        }
+        .bg-gradient-hero {
+            background: linear-gradient(180deg, rgba(2, 6, 23, 0.4) 0%, rgba(2, 6, 23, 1) 100%), url('https://placehold.co/1920x1080/020617/3f485f?text=Futuristic+Sales+Strategy') no-repeat center center;
+            background-size: cover;
+        }
+        .bg-services-card {
+            background: rgba(15, 23, 42, 0.7); /* Frosted glass effect with deep blue background */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: relative;
+        }
+        .bg-services-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            padding: 2px;
+            background: linear-gradient(to right, #ec4899, #38bdf8);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        .btn-gradient {
+            background: linear-gradient(to right, #ec4899, #38bdf8);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            box-shadow: 0 0 15px #38bdf8, 0 0 30px #ec4899;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 10px #ec4899, 0 0 20px #38bdf8;
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100 antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950 bg-opacity-70 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-extrabold text-white tracking-tight">Freeza One Labs</a>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#home" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">Services</a></li>
+                <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">About Us</a></li>
+                <li><a href="#success-stories" class="text-gray-300 hover:text-white transition duration-300">Success Stories</a></li>
+                <li><a href="#blog" class="text-gray-300 hover:text-white transition duration-300">Blog</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 bg-opacity-90">
+            <ul class="flex flex-col items-center py-4 space-y-4 text-xl">
+                <li><a href="#home" class="block text-gray-300 hover:text-white transition duration-300 py-2">Home</a></li>
+                <li><a href="#services" class="block text-gray-300 hover:text-white transition duration-300 py-2">Services</a></li>
+                <li><a href="#about" class="block text-gray-300 hover:text-white transition duration-300 py-2">About Us</a></li>
+                <li><a href="#success-stories" class="block text-gray-300 hover:text-white transition duration-300 py-2">Success Stories</a></li>
+                <li><a href="#blog" class="block text-gray-300 hover:text-white transition duration-300 py-2">Blog</a></li>
+                <li><a href="#contact" class="block text-gray-300 hover:text-white transition duration-300 py-2">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="relative bg-slate-950 min-h-screen flex items-center justify-center text-center p-6 bg-gradient-hero">
+            <div class="absolute inset-0 bg-slate-950 opacity-60"></div>
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up">
+                    🚀 Transform Your Sales with Proven Systems & Expert Execution
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-200 mb-8 animate-fade-in-up delay-200">
+                    From CRM setup to lead generation, training, and virtual sales management — we help Indian businesses scale revenue with data-driven strategies and hands-on support.
+                </p>
+                <a href="#contact" class="inline-block px-10 py-4 text-xl font-bold text-gray-900 rounded-full shadow-lg transition duration-300 transform hover:scale-105 animate-fade-in-up delay-400 btn-gradient">
+                    Book a Free Consultation
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Snapshot Section -->
+        <section class="py-20 px-6 bg-slate-900">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-white">Our Core Services</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-database text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">CRM Setup & Optimization</h3>
+                        <p class="text-gray-400 text-sm mb-4">We implement and optimize CRM systems like Zoho, HubSpot, Pipedrive, and Salesforce.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-robot text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Lead Scoring & Automation</h3>
+                        <p class="text-gray-400 text-sm mb-4">We create automated workflows to ensure no lead falls through the cracks.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-book-open text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Outbound Sales Playbook</h3>
+                        <p class="text-gray-400 text-sm mb-4">Build a repeatable outbound sales framework customized for your market.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-users-gear text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Sales Team Training</h3>
+                        <p class="text-gray-400 text-sm mb-4">Upskill your team with real-world, hands-on sales training.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-bullhorn text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Multi-Channel Outreach</h3>
+                        <p class="text-gray-400 text-sm mb-4">Launch automated campaigns that reach prospects where they are.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-chart-line text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Lead Data Enrichment</h3>
+                        <p class="text-gray-400 text-sm mb-4">Delivering verified, actionable leads for faster conversions.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                    <!-- Service Card 7 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-funnel-dollar text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Sales Funnel Audit</h3>
+                        <p class="text-gray-400 text-sm mb-4">Identify bottlenecks and unlock more revenue with a funnel analysis.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                    <!-- Service Card 8 -->
+                    <div class="bg-services-card p-8 rounded-xl shadow-xl transition-transform transform hover:scale-105 glow-hover">
+                        <i class="fas fa-user-tie text-4xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Virtual Sales Manager</h3>
+                        <p class="text-gray-400 text-sm mb-4">An experienced sales leader for your team at a fraction of the cost.</p>
+                        <a href="#services" class="text-cyan-400 font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Results & Testimonials Preview -->
+        <section class="py-20 px-6 bg-slate-950">
+            <div class="container mx-auto">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                    <!-- Client Results -->
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <p class="text-lg font-medium text-fuchsia-400 uppercase tracking-wider mb-2">Our Impact</p>
+                        <h2 class="text-5xl lg:text-6xl font-extrabold text-white mb-4">100+ businesses trained and optimized across India.</h2>
+                        <p class="text-gray-400 text-lg">We deliver measurable results that drive real growth for our clients, from startups to established enterprises.</p>
+                    </div>
+                    <!-- Testimonials -->
+                    <div class="lg:w-1/2 space-y-8">
+                        <div class="bg-slate-800 p-6 rounded-lg shadow-xl border border-fuchsia-400">
+                            <p class="text-gray-300 italic mb-4">“Freeza One helped us triple our pipeline in just 60 days.”</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/40x40/9333ea/ffffff?text=C1" alt="B2B SaaS Founder" class="rounded-full mr-4">
+                                <div>
+                                    <p class="font-semibold text-white">B2B SaaS Founder</p>
+                                    <p class="text-gray-500 text-sm">Tech Startup, Bangalore</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-lg shadow-xl border border-cyan-400">
+                            <p class="text-gray-300 italic mb-4">“Their sales playbook reduced our sales cycle by 30%.”</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/40x40/0ea5e9/ffffff?text=C2" alt="IT Services Director" class="rounded-full mr-4">
+                                <div>
+                                    <p class="font-semibold text-white">IT Services Director</p>
+                                    <p class="text-gray-500 text-sm">IT Services Firm, Pune</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section class="py-20 px-6 bg-slate-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">Why Choose Freeza One Labs?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg shadow-xl glow-hover">
+                        <i class="fas fa-award text-5xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">12+ Years of Expertise</h3>
+                        <p class="text-gray-400">Our deep experience in business development and sales ensures you get strategies that work.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg shadow-xl glow-hover">
+                        <i class="fas fa-crosshairs text-5xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Industry-Specific Strategies</h3>
+                        <p class="text-gray-400">We don't believe in one-size-fits-all. Our solutions are tailored to your industry and market.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg shadow-xl glow-hover">
+                        <i class="fas fa-chart-bar text-5xl text-fuchsia-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Tools for Real Results</h3>
+                        <p class="text-gray-400">We provide practical tools, playbooks, and hands-on support to drive measurable success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page (Detailed) -->
+        <section id="services" class="py-20 px-6 bg-slate-950">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-extrabold text-center mb-16 text-white">Our Detailed Services</h2>
+                <div class="space-y-16">
+
+                    <!-- Service 1: CRM Setup & Optimization -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-database text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold mb-2 text-white">1. CRM Setup & Optimization</h3>
+                                <p class="text-gray-300 text-lg mb-4">We implement and optimize CRM systems like Zoho, HubSpot, Pipedrive, and Salesforce to streamline your sales operations.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> 7–14 days
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹35,000 – ₹1,50,000
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Pipeline setup and configuration</li>
+                                    <li>Workflow automation (emails, follow-ups)</li>
+                                    <li>Dashboard and reporting setup</li>
+                                    <li>Team training for CRM adoption</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Schedule My CRM Setup
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Lead Scoring & Sales Process Automation -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-robot text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold mb-2 text-white">2. Lead Scoring & Sales Process Automation</h3>
+                                <p class="text-gray-300 text-lg mb-4">We create automated workflows to ensure no lead falls through the cracks.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> 7–10 days
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹25,000 – ₹90,000
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Lead scoring models</li>
+                                    <li>Automated qualification</li>
+                                    <li>Sales forecasting dashboards</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Automate My Sales
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Outbound Sales Playbook Development -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-book-open text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">3. Outbound Sales Playbook Development</h3>
+                                <p class="text-gray-300 text-lg mb-4">Build a repeatable outbound sales framework customized for your market.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> 10–21 days
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹60,000 – ₹2,00,000
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Prospecting framework & qualification process</li>
+                                    <li>Cold email & LinkedIn messaging templates</li>
+                                    <li>Call scripts & objection-handling guides</li>
+                                    <li>KPI tracking templates</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Build My Playbook
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Sales Team Training & Coaching -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-users-gear text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">4. Sales Team Training & Coaching</h3>
+                                <p class="text-gray-300 text-lg mb-4">Upskill your team with real-world sales training.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> 4–6 weeks
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹75,000 – ₹3,00,000
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Lead generation & outreach training</li>
+                                    <li>CRM and pipeline workshops</li>
+                                    <li>Call simulations & objection handling</li>
+                                    <li>Weekly performance reviews</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Train My Team
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5: Multi-Channel Outreach Campaign Setup -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-bullhorn text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">5. Multi-Channel Outreach Campaign Setup</h3>
+                                <p class="text-gray-300 text-lg mb-4">Launch automated campaigns that reach prospects where they are.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> 10–15 days
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹45,000 – ₹1,50,000
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Email campaign setup</li>
+                                    <li>LinkedIn prospecting</li>
+                                    <li>Cold calling workflows</li>
+                                    <li>Campaign analytics dashboards</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Start My Campaign
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Lead Data Enrichment Service -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-chart-line text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">6. Lead Data Enrichment Service</h3>
+                                <p class="text-gray-300 text-lg mb-4">Delivering verified, actionable leads for faster conversions.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> 3–7 days (for bulk leads: 7–14 days)
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹150 – ₹800 per lead or ₹40,000+ for bulk
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Verified contact data (email, phone, LinkedIn)</li>
+                                    <li>Company data (industry, revenue)</li>
+                                    <li>Intent-based segmentation</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Get Leads Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 7: Sales Funnel Audit & Optimization -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-funnel-dollar text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">7. Sales Funnel Audit & Optimization</h3>
+                                <p class="text-gray-300 text-lg mb-4">Identify bottlenecks and unlock more revenue.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> 7–10 days
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹35,000 – ₹1,20,000
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Funnel analysis</li>
+                                    <li>Conversion rate review</li>
+                                    <li>90-day improvement plan</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Audit My Funnel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 8: Virtual Fractional Sales Manager -->
+                    <div class="bg-services-card p-8 md:p-12 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start gap-8">
+                            <i class="fas fa-user-tie text-6xl text-fuchsia-400 mb-4 md:mb-0"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">8. Virtual Fractional Sales Manager</h3>
+                                <p class="text-gray-300 text-lg mb-4">An experienced sales leader for your team at a fraction of the cost.</p>
+                                <div class="flex items-center text-gray-400 mb-2">
+                                    <i class="far fa-clock mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Duration:</span> Ongoing (monthly retainer)
+                                </div>
+                                <div class="flex items-center text-gray-400 mb-6">
+                                    <i class="fas fa-indian-rupee-sign mr-2 text-cyan-400"></i>
+                                    <span class="font-medium">Price:</span> ₹1,00,000 – ₹3,50,000/month
+                                </div>
+                                <h4 class="font-semibold text-lg text-white mb-2">Deliverables:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-400 mb-6">
+                                    <li>Team performance oversight</li>
+                                    <li>Weekly pipeline reviews</li>
+                                    <li>Strategy updates & KPI tracking</li>
+                                    <li>Continuous coaching</li>
+                                </ul>
+                                <a href="#contact" class="px-8 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient">
+                                    Hire a Sales Manager
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Page -->
+        <section id="about" class="py-20 px-6 bg-slate-900">
+            <div class="container mx-auto">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl font-extrabold text-white mb-6">We are your growth partners in sales.</h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        With 12+ years in business development and sales enablement, we’ve worked with startups, SaaS companies, IT firms, and B2B organizations across India to build scalable sales systems.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                        <div class="p-6 rounded-lg bg-slate-800 border border-fuchsia-400 glow-hover">
+                            <p class="font-semibold text-fuchsia-400 text-lg mb-2">Practical & Hands-On</p>
+                            <p class="text-gray-400">We provide real-world training and actionable playbooks.</p>
+                        </div>
+                        <div class="p-6 rounded-lg bg-slate-800 border border-cyan-400 glow-hover">
+                            <p class="font-semibold text-cyan-400 text-lg mb-2">Industry-Specific</p>
+                            <p class="text-gray-400">Our strategies are customized to your unique market and challenges.</p>
+                        </div>
+                        <div class="p-6 rounded-lg bg-slate-800 border border-fuchsia-400 glow-hover">
+                            <p class="font-semibold text-fuchsia-400 text-lg mb-2">Measurable Results</p>
+                            <p class="text-gray-400">We focus on outcomes and continuous improvement, not just advice.</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="px-8 py-4 text-white font-bold text-lg rounded-full shadow btn-gradient">
+                        Meet Our Team
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Success Stories -->
+        <section id="success-stories" class="py-20 px-6 bg-slate-950">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-extrabold text-center text-white mb-16">Customer Success Stories</h2>
+                <div class="space-y-12">
+
+                    <!-- Case Study 1 -->
+                    <div class="bg-services-card p-8 rounded-2xl shadow-xl">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <h3 class="text-2xl font-bold text-white mb-2">SaaS Startup – Bangalore</h3>
+                                <p class="text-gray-400 italic">"We needed to turn our email campaigns into a reliable lead source."</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <p class="text-gray-300 mb-4">
+                                    <span class="font-bold text-fuchsia-400">Challenge:</span> Low conversion rates from email campaigns. Their sales team was struggling with unstructured outreach and lacked a clear process.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    <span class="font-bold text-fuchsia-400">Solution:</span> We implemented a CRM with lead scoring, developed a custom outbound sales playbook, and trained their sales team on effective LinkedIn outreach strategies.
+                                </p>
+                                <p class="text-gray-300">
+                                    <span class="font-bold text-fuchsia-400">Results:</span>
+                                    <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+                                        <li>3X increase in qualified leads in 60 days</li>
+                                        <li>40% improvement in sales pipeline velocity</li>
+                                        <li>Higher team morale and better lead management</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="bg-services-card p-8 rounded-2xl shadow-xl">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <h3 class="text-2xl font-bold text-white mb-2">IT Services Firm – Hyderabad</h3>
+                                <p class="text-gray-400 italic">"Our sales team needed a more structured approach to new client acquisition."</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <p class="text-gray-300 mb-4">
+                                    <span class="font-bold text-fuchsia-400">Challenge:</span> Lack of structured sales process.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    <span class="font-bold text-fuchsia-400">Solution:</span> We implemented a multi-channel outreach campaign, developed cold calling scripts, and provided a virtual fractional sales manager for 3 months to provide oversight and coaching.
+                                </p>
+                                <p class="text-gray-300">
+                                    <span class="font-bold text-fuchsia-400">Results:</span>
+                                    <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+                                        <li>50% increase in client meetings</li>
+                                        <li>Closed deals grew by 35% in 90 days</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div class="bg-services-card p-8 rounded-2xl shadow-xl">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <h3 class="text-2xl font-bold text-white mb-2">Manufacturing Company – Pune</h3>
+                                <p class="text-gray-400 italic">"We needed to centralize our lead tracking and reduce lead leakage."</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <p class="text-gray-300 mb-4">
+                                    <span class="font-bold text-fuchsia-400">Challenge:</span> No CRM or centralized lead tracking, leading to lost opportunities.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    <span class="font-bold text-fuchsia-400">Solution:</span> We performed a comprehensive sales funnel audit, set up and configured a new CRM system, and provided training to their entire team.
+                                </p>
+                                <p class="text-gray-300">
+                                    <span class="font-bold text-fuchsia-400">Results:</span>
+                                    <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+                                        <li>70% reduction in lead leakage</li>
+                                        <li>Revenue up by ₹50 lakhs in 6 months</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#blog" class="inline-block px-8 py-3 bg-slate-800 text-white font-bold rounded-full shadow hover:bg-slate-700 transition duration-300">
+                        See More Success Stories
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Page -->
+        <section id="blog" class="py-20 px-6 bg-slate-900">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-extrabold text-center text-white mb-16">Blog & Insights</h2>
+                <div class="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
+                    <!-- Blog Post 1: 5 Proven Strategies to Build a Winning Sales Pipeline in India -->
+                    <div class="bg-slate-800 p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold text-white mb-4">5 Proven Strategies to Build a Winning Sales Pipeline in India</h3>
+                        <p class="text-gray-400 text-lg mb-6">A strong sales pipeline is the backbone of predictable revenue. In India’s competitive B2B market, businesses need structured, actionable strategies to keep deals flowing.</p>
+                        <h4 class="font-semibold text-xl text-fuchsia-400 mb-2">Strategies:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+                            <li><strong class="text-white">Define Your ICP (Ideal Customer Profile):</strong> Focus on industry, company size, and key decision-makers.</li>
+                            <li><strong class="text-white">Use Multi-Channel Outreach:</strong> Combine LinkedIn, email, and calls for higher engagement.</li>
+                            <li><strong class="text-white">Leverage CRM Tools:</strong> Track every stage of the pipeline for better forecasting.</li>
+                            <li><strong class="text-white">Implement Lead Scoring:</strong> Prioritize prospects based on engagement and buying intent.</li>
+                            <li><strong class="text-white">Maintain Consistent Follow-Ups:</strong> 80% of deals close after 5+ follow-ups — don’t stop too early.</li>
+                        </ul>
+                        <p class="text-gray-400 italic mb-4">A scalable pipeline is built on process, not luck. Freeza One helps you build a predictable system that works.</p>
+                        <a href="#contact" class="px-6 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient inline-block">
+                            Build My Sales Pipeline
+                        </a>
+                    </div>
+                    <!-- Blog Post 2: How to Automate Your Sales Process Without Losing the Human Touch -->
+                    <div class="bg-slate-800 p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold text-white mb-4">How to Automate Your Sales Process Without Losing the Human Touch</h3>
+                        <p class="text-gray-400 text-lg mb-6">Automation is powerful, but if overused, it can make your sales outreach feel robotic. The key is balance.</p>
+                        <h4 class="font-semibold text-xl text-fuchsia-400 mb-2">Steps:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+                            <li><strong class="text-white">Automate repetitive tasks:</strong> Focus on data entry, email scheduling, and follow-up reminders.</li>
+                            <li><strong class="text-white">Personalize your first-touch messages:</strong> Use personalized fields to make the initial contact feel human.</li>
+                            <li><strong class="text-white">Use AI tools for lead qualification:</strong> But keep all critical calls and closing conversations human-driven.</li>
+                            <li><strong class="text-white">Track analytics:</strong> Identify where manual intervention increases conversions and double down on those areas.</li>
+                        </ul>
+                        <p class="text-gray-400 italic mb-4">Automation should enhance relationships, not replace them.</p>
+                        <a href="#contact" class="px-6 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient inline-block">
+                            Automate My Sales Process
+                        </a>
+                    </div>
+                    <!-- Blog Post 3: The Ultimate Guide to Cold Emailing in 2025 -->
+                    <div class="bg-slate-800 p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold text-white mb-4">The Ultimate Guide to Cold Emailing in 2025</h3>
+                        <p class="text-gray-400 text-lg mb-6">Cold emailing isn’t dead — it’s evolving. In 2025, personalization and intent data are non-negotiable for success.</p>
+                        <h4 class="font-semibold text-xl text-fuchsia-400 mb-2">Best Practices:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+                            <li><strong class="text-white">Subject lines:</strong> Keep them under 6 words to maximize open rates.</li>
+                            <li><strong class="text-white">Add value:</strong> Include a case study, a relevant insight, or a quick tip to show you've done your research.</li>
+                            <li><strong class="text-white">Use multi-step email sequences:</strong> A well-planned sequence of 3–5 touchpoints is far more effective than a single email.</li>
+                            <li><strong class="text-white">Clear CTA:</strong> Always include a single, clear call-to-action, such as "book a call" or "download a resource".</li>
+                            <li><strong class="text-white">Test and iterate:</strong> Continuously test different subject lines and body copy based on open and reply rates to optimize performance.</li>
+                        </ul>
+                        <p class="text-gray-400 italic mb-4">Cold email success comes from strategy and persistence.</p>
+                        <a href="#contact" class="px-6 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient inline-block">
+                            Get My Email Templates
+                        </a>
+                    </div>
+                    <!-- Blog Post 4: Why Indian Startups Need a Fractional Sales Manager -->
+                    <div class="bg-slate-800 p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold text-white mb-4">Why Indian Startups Need a Fractional Sales Manager</h3>
+                        <p class="text-gray-400 text-lg mb-6">Most startups can’t afford a full-time VP of Sales with a six-figure salary. A virtual fractional sales manager bridges the gap, providing senior-level leadership without the high overhead.</p>
+                        <h4 class="font-semibold text-xl text-fuchsia-400 mb-2">Benefits:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+                            <li><strong class="text-white">Access to senior-level expertise:</strong> Get an experienced sales leader to build and manage your sales function.</li>
+                            <li><strong class="text-white">Faster sales process optimization:</strong> Implement proven playbooks and strategies without the learning curve.</li>
+                            <li><strong class="text-white">Hands-on team training and coaching:</strong> Ensure your team is skilled and motivated.</li>
+                            <li><strong class="text-white">Scalable strategies:</strong> Get a customized strategy tailored to your specific growth stage.</li>
+                        </ul>
+                        <p class="text-gray-400 italic mb-4">For lean startups, a fractional sales manager is the fastest way to build a high-performing sales team.</p>
+                        <a href="#contact" class="px-6 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient inline-block">
+                            Hire a Fractional Sales Manager
+                        </a>
+                    </div>
+                    <!-- Blog Post 5: 10 CRM Mistakes That Are Costing You Revenue -->
+                    <div class="bg-slate-800 p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold text-white mb-4">10 CRM Mistakes That Are Costing You Revenue</h3>
+                        <p class="text-gray-400 text-lg mb-6">Your CRM should be your revenue engine — but only if used correctly. Avoid these common mistakes to turn your CRM into a growth machine.</p>
+                        <h4 class="font-semibold text-xl text-fuchsia-400 mb-2">Common Mistakes:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+                            <li>Poor data hygiene</li>
+                            <li>No defined sales stages</li>
+                            <li>Not using automation</li>
+                            <li>Lack of training for the team</li>
+                            <li>No KPI tracking</li>
+                            <li>Ignoring lead scoring</li>
+                            <li>Overcomplicating workflows</li>
+                            <li>No integrations with other tools</li>
+                            <li>Failure to follow up</li>
+                            <li>Not customizing dashboards</li>
+                        </ul>
+                        <p class="text-gray-400 italic mb-4">Avoid these mistakes, and your CRM becomes a growth machine.</p>
+                        <a href="#contact" class="px-6 py-3 text-white font-bold rounded-full shadow transition duration-300 btn-gradient inline-block">
+                            Optimize My CRM
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <h4 class="text-xl font-bold text-white mb-4">Additional Blog Topics for Future:</h4>
+                    <ul class="list-none space-y-1 text-gray-400">
+                        <li>"Lead Nurturing Tactics That Actually Work in the Indian Market"</li>
+                        <li>"How to Train Your Sales Team for LinkedIn Prospecting"</li>
+                        <li>"Data Enrichment Secrets to Boost Your Conversion Rates"</li>
+                        <li>"From Chaos to Clarity: How Sales Funnel Audits Drive Revenue"</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="py-20 px-6 bg-slate-950">
+            <div class="container mx-auto">
+                <div class="max-w-3xl mx-auto bg-services-card p-8 rounded-2xl shadow-2xl">
+                    <h2 class="text-4xl font-extrabold text-center text-white mb-8">Let's Talk Growth</h2>
+                    <p class="text-center text-gray-300 mb-8">Fill out the form below to book a free 30-minute consultation. We'll discuss your sales challenges and how we can help.</p>
+                    
+                    <form id="contact-form" onsubmit="submitForm(event)" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-slate-800 rounded-lg text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-slate-800 rounded-lg text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-400">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-slate-800 rounded-lg text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-400">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-1">Service Interested In</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 bg-slate-800 rounded-lg text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-400">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="CRM Setup & Optimization">CRM Setup & Optimization</option>
+                                <option value="Lead Scoring & Sales Process Automation">Lead Scoring & Sales Process Automation</option>
+                                <option value="Outbound Sales Playbook Development">Outbound Sales Playbook Development</option>
+                                <option value="Sales Team Training & Coaching">Sales Team Training & Coaching</option>
+                                <option value="Multi-Channel Outreach Campaign Setup">Multi-Channel Outreach Campaign Setup</option>
+                                <option value="Lead Data Enrichment Service">Lead Data Enrichment Service</option>
+                                <option value="Sales Funnel Audit & Optimization">Sales Funnel Audit & Optimization</option>
+                                <option value="Virtual Fractional Sales Manager">Virtual Fractional Sales Manager</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 text-white font-bold text-lg rounded-full shadow-lg btn-gradient">
+                            Book a Free 30-Minute Consultation
+                        </button>
+                    </form>
+                    <div class="mt-8 text-center">
+                        <p class="text-gray-400 mb-4">You can also reach us directly:</p>
+                        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="mailto:sales@freeza.one" class="px-6 py-3 bg-slate-700 text-white font-bold rounded-full shadow hover:bg-slate-600 transition duration-300 flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2"></i> sales@freeza.one
+                            </a>
+                            <a href="tel:+918072401586" class="px-6 py-3 bg-slate-700 text-white font-bold rounded-full shadow hover:bg-slate-600 transition duration-300 flex items-center justify-center">
+                                <i class="fas fa-phone-alt mr-2"></i> +91 8072401586
+                            </a>
+                            <a href="https://wa.me/918072401586" target="_blank" class="px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow hover:bg-green-400 transition duration-300 flex items-center justify-center">
+                                <i class="fab fa-whatsapp mr-2"></i> Message on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-4 text-center">Find Us Here</h3>
+                    <!-- Placeholder for a Google Map -->
+                    <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden border border-slate-700 shadow-lg">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.493863486043!2d77.59292892976858!3d12.980072979069352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1684c3c33321%3A0x6a058d8396328328!2sBangalore%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1678235284102!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-10">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Freeza One Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Smooth Scrolling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('nav a');
+
+            // Mobile menu toggle
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scroll for all links and close mobile menu
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const offset = 80; // Account for fixed header height
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = targetElement.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu after clicking a link
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+
+            // Simple validation to ensure fields are not empty
+            if (!name || !email || !phone) {
+                // Using an alert for simplicity as specified in instructions
+                alert('Please fill out your Name, Email, and Phone Number.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Free Consultation Request from ${name}`);
+            const body = encodeURIComponent(`Hello Freeza One Labs,\n\nI would like to book a free consultation.\n\nHere are my details:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService Interested In: ${service}\n\nPlease get in touch with me to schedule a time.\n\nThank you.`);
+
+            // Construct the mailto link and open in a new window
+            window.location.href = `mailto:sales@freeza.one?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
